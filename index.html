@@ -5,99 +5,108 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Champion Roles Comparison</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9fafb;
-      padding: 30px;
-    }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      max-width: 1100px;
-      margin: auto;
-      background-color: white;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-    caption {
-      caption-side: top;
-      text-align: center;
-      font-size: 1.5em;
-      margin-bottom: 15px;
-      font-weight: bold;
-      color: #2c5282;
-    }
-    th, td {
-      padding: 16px 20px;
-      text-align: left;
-      border: 1px solid #e2e8f0;
-      vertical-align: top;
-    }
-    th {
-      font-size: 1.1em;
-      color: white;
-    }
-    th.role {
-      background-color: #2d3748;
-    }
-    th.nami {
-      background-color: #4299e1;
-    }
-    th.yuumi {
-      background-color: #ed64a6;
-    }
-    th.lulu {
-      background-color: #9f7aea;
-    }
-    th.janna {
-      background-color: #61aaa6;
-    }
-    th.sona {
-      background-color: #69a1cf;
-    }
-    th.milio {
-      background-color: #d3d153;
-    }
-    th.soraka {
-      background-color: #bd52b7;
-    }
-    th.karma {
-      background-color: #26cfab;
-    }
-    td.role-name {
-      font-weight: bold;
-      color: #2c5282;
-      background-color: #edf2f7;
-    }
-    td.nami {
-      background-color: #ebf8ff;
-    }
-    td.yuumi {
-      background-color: #fff5f7;
-    }
-    td.lulu {
-      background-color: #faf5ff;
-    }
-    td.janna {
-      background-color: #ebfffc;
-    }
-    td.sona {
-      background-color: #e8f3fd;
-    }
-    td.milio {
-      background-color: #f8f8d8;
-    }
-    td.soraka {
-      background-color: #ffe7f3;
-    }
-    td.karma {
-      background-color: #b7f7e8;
-    }
-    ul {
-      padding-left: 20px;
-      margin: 0;
-      list-style-type: disc;
-    }
-  </style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #e2e8f0;
+    padding: 30px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+  }
+
+  caption {
+    caption-side: top;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #90cdf4;
+  }
+
+  th, td {
+    padding: 16px 20px;
+    text-align: left;
+    border: 1px solid #2d3748;
+    vertical-align: top;
+  }
+
+  th {
+    font-size: 1.1em;
+    color: white;
+  }
+
+  th.role { background-color: #2d3748; }
+  th.nami { background-color: #3182ce; }
+  th.yuumi { background-color: #d53f8c; }
+  th.lulu { background-color: #805ad5; }
+  th.janna { background-color: #319795; }
+  th.sona { background-color: #4299e1; }
+  th.milio { background-color: #d3bc00; }
+  th.soraka { background-color: #b83280; }
+  th.karma { background-color: #2c7a7b; }
+
+  td.role-name {
+    font-weight: bold;
+    color: #90cdf4;
+    background-color: #2a2a2a;
+  }
+
+  td.nami { background-color: #2a3b4f; }
+  td.yuumi { background-color: #4b2c3d; }
+  td.lulu { background-color: #3e2e57; }
+  td.janna { background-color: #2e4d4c; }
+  td.sona { background-color: #2d3f54; }
+  td.milio { background-color: #585823; }
+  td.soraka { background-color: #552b49; }
+  td.karma { background-color: #256c5d; }
+
+  ul {
+    padding-left: 20px;
+    margin: 0;
+    list-style-type: disc;
+  }
+
+  div {
+    color: #e2e8f0;
+  }
+
+  input, button {
+    background-color: #2d3748;
+    color: #e2e8f0;
+    border: 1px solid #4a5568;
+    padding: 6px 10px;
+    border-radius: 4px;
+  }
+
+  input:focus, button:focus {
+    outline: none;
+    border-color: #63b3ed;
+  }
+
+  button:hover {
+    background-color: #4a5568;
+    cursor: pointer;
+  }
+
+  h2 {
+    color: #90cdf4;
+  }
+
+  label {
+    margin-right: 10px;
+  }
+
+  span {
+    margin: 0 10px;
+  }
+</style>
 </head>
 <body>
 
@@ -309,7 +318,7 @@
   </tbody>
 </table>
 
-<div style="max-width: 1100px; margin: 40px auto 0; background-color: white; padding: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-radius: 8px;">
+<div style="max-width: 1100px; margin: 40px auto 0; background-color: #1e1e1e; border: 1px solid #2d3748; padding: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-radius: 8px;">
   <h2 style="color: #2c5282; margin-top: 0;">Laning Phase </h2>
   <ul>
     <li>Give or take prio on first 2 waves</li>
@@ -319,10 +328,11 @@
     <li>Use barrier in early trades</li>
     <li>Use cookies in fights</li>
     <li>Get used to champ only toggle</li>
+    <li>Buy control wards</li>
   </ul>
 </div>
 
-<div style="max-width: 1100px; margin: 30px auto 0; background-color: white; padding: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-radius: 8px;">
+<div style="max-width: 1100px; margin: 30px auto 0; background-color: #1e1e1e; border: 1px solid #2d3748; padding: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-radius: 8px;">
   <h2 style="color: #2c5282; margin-top: 0;">Mid Game</h2>
   <ul>
     <li>Don't frontline</li>
@@ -331,7 +341,7 @@
   </ul>
 </div>
 
-<div style="max-width: 1100px; margin: 30px auto; background-color: white; padding: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-radius: 8px;">
+<div style="max-width: 1100px; margin: 30px auto; background-color: #1e1e1e; border: 1px solid #2d3748; padding: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-radius: 8px;">
   <h2 style="color: #2c5282; margin-top: 0;">KDA Calculator</h2>
   <label>Kills: <input type="number" id="kills" value="0" min="0" data-key="kills"/></label>
   <label style="margin-left: 15px;">Deaths: <input type="number" id="deaths" value="0" min="0" data-key="deaths"/></label>
@@ -340,7 +350,7 @@
   <p style="margin-top: 10px;"><strong>KDA Ratio:</strong> <span id="kdaResult">-</span></p>
 </div>
 
-<div style="max-width: 1100px; margin: 30px auto; background-color: white; padding: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-radius: 8px;">
+<div style="max-width: 1100px; margin: 30px auto; background-color: #1e1e1e; border: 1px solid #2d3748; padding: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-radius: 8px;">
   <h2 style="color: #2c5282; margin-top: 0;">Win Rate Calculator</h2>
   <label>Wins: <input type="number" id="winCount" value="0" min="0" data-key="winCount"/></label>
   <label style="margin-left: 15px;">Games Played: <input type="number" id="gamesCount" value="0" min="0" data-key="gamesCount"/></label>

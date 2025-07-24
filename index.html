@@ -309,5 +309,116 @@
   </tbody>
 </table>
 
+<div style="max-width: 1100px; margin: 40px auto 0; background-color: white; padding: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-radius: 8px;">
+  <h2 style="color: #2c5282; margin-top: 0;">Laning Phase </h2>
+  <ul>
+    <li>Give or take prio on first 2 waves</li>
+    <li>Track both junglers</li>
+    <li>Triangle formation</li>
+    <li>Long or short trades?</li>
+    <li>Use barrier in early trades</li>
+    <li>Use cookies in fights</li>
+    <li>Get used to champ only toggle</li>
+  </ul>
+</div>
+
+<div style="max-width: 1100px; margin: 30px auto 0; background-color: white; padding: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-radius: 8px;">
+  <h2 style="color: #2c5282; margin-top: 0;">Mid Game</h2>
+  <ul>
+    <li>Don't frontline</li>
+    <li>What are the threats?</li>
+    <li>Be patient, don't get caught for mid wave</li>
+  </ul>
+</div>
+
+<div style="max-width: 1100px; margin: 30px auto; background-color: white; padding: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-radius: 8px;">
+  <h2 style="color: #2c5282; margin-top: 0;">KDA Calculator</h2>
+  <label>Kills: <input type="number" id="kills" value="0" min="0" data-key="kills"/></label>
+  <label style="margin-left: 15px;">Deaths: <input type="number" id="deaths" value="0" min="0" data-key="deaths"/></label>
+  <label style="margin-left: 15px;">Assists: <input type="number" id="assists" value="0" min="0" data-key="assists"/></label>
+  <button onclick="calculateKDA()" style="margin-left: 20px;">Calculate</button>
+  <p style="margin-top: 10px;"><strong>KDA Ratio:</strong> <span id="kdaResult">-</span></p>
+</div>
+
+<div style="max-width: 1100px; margin: 30px auto; background-color: white; padding: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-radius: 8px;">
+  <h2 style="color: #2c5282; margin-top: 0;">Win Rate Calculator</h2>
+  <label>Wins: <input type="number" id="winCount" value="0" min="0" data-key="winCount"/></label>
+  <label style="margin-left: 15px;">Games Played: <input type="number" id="gamesCount" value="0" min="0" data-key="gamesCount"/></label>
+  <button onclick="calculateWinRate()" style="margin-left: 20px;">Calculate</button>
+  <p style="margin-top: 10px;"><strong>Win Rate:</strong> <span id="winRateResult">-</span></p>
+</div>
+
+
+<script>
+  // Load saved values when page loads
+  window.onload = function () {
+    document.querySelectorAll('input[data-key]').forEach(input => {
+      const key = input.getAttribute('data-key');
+      const saved = localStorage.getItem(key);
+      if (saved !== null) {
+        input.value = saved;
+      }
+    });
+  };
+
+  // Save input values on change
+  document.addEventListener('input', function (e) {
+    if (e.target.matches('input[data-key]')) {
+      const key = e.target.getAttribute('data-key');
+      localStorage.setItem(key, e.target.value);
+    }
+  });
+
+  function calculateKDA() {
+    const kills = parseInt(document.getElementById('kills').value) || 0;
+    const deaths = parseInt(document.getElementById('deaths').value) || 0;
+    const assists = parseInt(document.getElementById('assists').value) || 0;
+
+    let resultText;
+
+    if (deaths === 0) {
+      resultText = 'Perfect (∞)';
+    } else {
+      const kda = ((kills + assists) / deaths).toFixed(2);
+      resultText = kda;
+    }
+
+    document.getElementById('kdaResult').innerText = resultText;
+  }
+
+  function calculateWinRate() {
+    const wins = parseInt(document.getElementById('winCount').value) || 0;
+    const games = parseInt(document.getElementById('gamesCount').value) || 0;
+
+    let result;
+
+    if (games === 0) {
+      result = 'N/A';
+    } else {
+      result = ((wins / games) * 100).toFixed(2) + '%';
+    }
+
+    document.getElementById('winRateResult').innerText = result;
+  }
+
+  function changeCount(id, delta) {
+    const el = document.getElementById(id);
+    let count = parseInt(el.innerText);
+    count = Math.max(0, count + delta); // Prevent negative
+    el.innerText = count;
+    localStorage.setItem(id, count);
+  }
+
+  // Restore counters too
+  window.addEventListener('load', () => {
+    ['counter1', 'counter2', 'counter3'].forEach(id => {
+      const saved = localStorage.getItem(id);
+      if (saved !== null) {
+        document.getElementById(id).innerText = saved;
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
